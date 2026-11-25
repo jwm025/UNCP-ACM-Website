@@ -1,0 +1,155 @@
+/* External stylesheet for index.html (Light Mode) */
+
+/* Reset default margin and padding */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+/* Style for the navigation bar */
+nav {
+    background-color: #333;
+}
+
+/* Style for the list containing the menu items */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Style for individual menu items */
+nav li {
+    float: left;
+}
+
+/* Style for links within menu items */
+nav li a {
+    display: block;
+    color: goldenrod;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color of links on hover */
+nav li a:hover {
+    background-color: #111;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+.grid-container div, header, footer{
+    padding: 10px;
+    background-color: wheat;
+    border: 5px solid gray;
+}
+
+header {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    background-color: goldenrod;
+}
+
+.navBar {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    overflow: hidden;
+}
+
+.leftTopBox{
+    grid-column:1;
+    grid-row: 3 / 6;
+}
+
+.midBox {
+    grid-column: 2 / 4;
+    grid-row: 3 / 9;
+}
+
+.rightTopBox {
+    grid-column: 4;
+    grid-row: 3 / 5;
+}
+
+.leftBottomBox{
+    grid-column:1;
+    grid-row: 6 / 9;
+}
+
+.rightMidBox{
+    grid-column: 4;
+    grid-row: 5 / 7;
+}
+
+.rightBottomBox {
+    grid-column: 4;
+    grid-row: 7 / 9;
+}
+
+footer {
+    grid-column: 1 / 5;
+    grid-row: 9;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .grid-container {
+    /* Collapse the layout into a single vertical column */
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset layout boundaries so the boxes can stack naturally */
+  header,
+  .navBar,
+  .leftTopBox,
+  .midBox,
+  .rightTopBox,
+  .leftBottomBox,
+  .rightMidBox,
+  .rightBottomBox,
+  footer {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Explicitly order the elements based on your media function list */
+  header {
+    order: 1;
+  }
+  .navBar {
+    order: 2;
+  }
+  .leftTopBox {
+    order: 3;
+  }
+  .leftBottomBox {
+    order: 4;
+  }
+  .midBox {
+    order: 5;
+  }
+  .rightTopBox {
+    order: 6;
+  }
+  .rightMidBox {
+    order: 7;
+  }
+  .rightBottomBox {
+    order: 8;
+  }
+  footer {
+    order: 9;
+  }
+}

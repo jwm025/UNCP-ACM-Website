@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCP-ACM Member Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; max-width: 450px; }
+        table { border-collapse: collapse; }
+        td { padding: 8px; }
+        .msg { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        input[type="text"], input[type="password"] { width: 200px; padding: 4px; }
+    </style>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('msg');
+            const err = urlParams.get('error');
+            if (msg) document.getElementById('msg').textContent = msg;
+            if (err) document.getElementById('error').textContent = err;
+        }
+    </script>
+</head>
+<body>
+    <h1>Member Login</h1>
+    <p id="msg" class="msg"></p>
+    <p id="error" class="error"></p>
+
+    <form action="loginSalt.php" method="post">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input name="uName" type="text" required autofocus></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input name="pw" type="password" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="login" value="Login"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <p>If you are new, <a href="registerSalt.php">register here</a>.</p>
+    <p><a href="index.php">Back to Home</a></p>
+</body>
+</html>
